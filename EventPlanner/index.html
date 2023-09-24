@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lay-Z-Planner</title>
     <script  src = "pixi/pixi.js"></script>
     <script  src = "pixi/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +20,8 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </head>
-<body>
+<body id="body">
+    <div id="profile">
         <h1 id="header"> Lay-Z-Planner </h1>
     <div id="imagewcaption">
     <image id="front_page" src = "pixi/images/floorPlan.png"></image>
@@ -29,19 +32,23 @@
     </div>
 
     <div id = "input-container" class="fadeIn">
+        <h3 id = "scale-explanation">Length: no more than 9M | Width: no more than 5M</h3>
     <input id="input1" type="text" class="input" placeholder = "Input Length in meters"> </input>
     <input id="input2" type="text" class="input" placeholder = "Input Width in meters"></input>
-    <button id = "value-btn" onclick = "fadeOut(); showBtns()">click to make plane</button>
+    
+    <button id = "value-btn" onclick = "fadeOut();">click to make plane</button>
 </div>
 <div id="btn-spn">
     <button id="start_button" class="lineUp" onclick="remove(this); showTextBoxes();"> Start Planning!</button>
     <button id="table-spn">place table</button>
-    <button id="long-tablespn">place long table</button>
-    <button id="circle-tablespn">place circle table</button>
+    <button id="long-tablespn" onclick="createLongTable()">place long table</button>
+    <button id="circle-tablespn" onclick = "createCircleTable()">place circle table</button>
     <button id="chair-spn">place chair</button>
+    <button id="clear-board">Clear Space</button>
+    <button id="pdf" onclick= "downloadPDF()">Save to PDF</button>
+</div>
 </div>
 </body>
-
 
  
 

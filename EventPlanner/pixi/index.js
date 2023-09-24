@@ -30,7 +30,13 @@ function fadeOut(){
     btn.classList.add("fadeOut")
     image.classList.add("fadeOut")
     caption.classList.add("fadeOut")
+    document.getElementById("scale-explanation").classList.add("fadeOut")
+
+    showBtns()
             makeGraph(input1.value*100,input2.value*100)
+        } else{
+            document.getElementById("scale-explanation").innerHTML = "please input valid measurements (<10 | <6)"
+           
         }
 }
 }
@@ -40,14 +46,40 @@ let tableBtn = document.getElementById("table-spn")
 let longTableBtn = document.getElementById("long-tablespn")
 let circTableBtn = document.getElementById("circle-tablespn")
 let chairBtn = document.getElementById("chair-spn")
+let clearBtn = document.getElementById("clear-board")
+let pdfBtn = document.getElementById("pdf")
 tableBtn.style.display = "block"
 longTableBtn.style.display = "block"
 circTableBtn.style.display = "block"
 chairBtn.style.display = "block"
+clearBtn.style.display = "block"
+pdfBtn.style.display = "block"
+
 }
+
+function downloadPDF(){
+    let page = document.getElementById("page")
+    var opt = {
+        margin:       1,
+        filename:     'planner1.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+    html2pdf().set(opt).from(page).save()
+}
+
+
+
+
+
+
+
+
+
 function makeGraph(inp1, inp2)
 { 
-const app = new PIXI.Application({ background: "#FFFFFF", width: inp1, height: inp2});
+const app = new PIXI.Application({ background: "#e3d5ca", width: inp1, height: inp2});
 
 document.body.appendChild(app.view);
 // create a texture from an image path
@@ -63,33 +95,10 @@ circleTableTexture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
 chairTexture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
 
 
+
 //this function creates a chair object on the screen.
-createChair(
-    app.screen.width/2,
-    app.screen.height/2,
-
-);
-//this function creates a circle table object on the screen.
-createCircleTable(
-    app.screen.width/2,
-    app.screen.height/2,
-
-);
-//this function creates a table object on the screen.
-    createTable(
-        app.screen.width/2,
-        app.screen.height/2,
-
-    );
-
-    //this function creates a long table 
-    createLongTable(
-        app.screen.width/2,
-        app.screen.width/2,
-    );
-
  //code for making the chair
- function createChair(x, y)
+ document.getElementById("chair-spn").addEventListener("click", function createChair()
  {
      // create chair
      const chair = new PIXI.Sprite(chairTexture);
@@ -108,16 +117,18 @@ createCircleTable(
      chair.on('pointerdown', onDragStart, chair);
  
      // move sprite
-     chair.x = x;
-     chair.y = y;
+     chair.x = app.screen.width/2;
+     chair.y = app.screen.height/2;
  
      // add it to the stage
      app.stage.addChild(chair);
  }
+ )
  
 
     //code for making the long table
-    function createLongTable(x, y)
+    document.getElementById("long-tablespn").addEventListener("click", function createLongTable()
+   
 {
     // create table
     const longTable = new PIXI.Sprite(longTableTexture);
@@ -136,15 +147,16 @@ createCircleTable(
     longTable.on('pointerdown', onDragStart, longTable);
 
     // move sprite
-    longTable.x = x;
-    longTable.y = y;
+    longTable.x = app.screen.width/2;
+    longTable.y = app.screen.height/2;
 
     // add it to the stage
     app.stage.addChild(longTable);
 }
-
+    )
  //code for making the circle table
- function createCircleTable(x, y)
+ document.getElementById("circle-tablespn").addEventListener("click", function createCircleTable()
+
  {
      // create table
      const circleTable = new PIXI.Sprite(circleTableTexture);
@@ -163,14 +175,15 @@ createCircleTable(
      circleTable.on('pointerdown', onDragStart, circleTable);
  
      // move sprite
-     circleTable.x = x;
-     circleTable.y = y;
+     circleTable.x = app.screen.width/2;
+     circleTable.y = app.screen.height/2;
  
      // add it to the stage
      app.stage.addChild(circleTable);
  }
+ )
+ document.getElementById("table-spn").addEventListener("click", function createTable()
 
-function createTable(x, y)
 {
     // create table
     const table = new PIXI.Sprite(tableTexture);
@@ -189,13 +202,13 @@ function createTable(x, y)
     table.on('pointerdown', onDragStart, table);
 
     // move sprite
-    table.x = x;
-    table.y = y;
+    table.x = app.screen.width/2;
+    table.y = app.screen.height/2;
 
     // add it to the stage
     app.stage.addChild(table);
 }
-
+ )
 let dragTarget = null;
 
 app.stage.eventMode = 'static';
@@ -211,6 +224,16 @@ function onDragMove(event)
     }
 }
 
+ document.getElementById("clear-board").addEventListener("click", function(){
+    app.stage.removeChildren();
+
+    // let input1 = document.getElementById("input1")
+    // let input2 = document.getElementById("input2")
+    // let btn = document.getElementById("value-btn")
+    // input1.style.display = "block"
+    // input2.style.display = "block"
+    // btn.style.display = "block"
+ })
 function onDragStart()
 {
     // store a reference to the data
@@ -228,4 +251,6 @@ function onDragEnd()
         dragTarget = null;
     }
 }
+
+
 }

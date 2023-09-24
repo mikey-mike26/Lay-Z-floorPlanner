@@ -106,11 +106,26 @@ height:400px;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: bold;
 }
-
+#clear-board{
+    display:none;
+    border:2px solid #f9dbbd;
+    background-color: #f9dbbd;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:10px 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    margin-left:100px;
+}
 #btn-spn {
     display:flex;
     gap:5px;
     margin-bottom:15px;
+}
+#scale-explanation {
+    font-family: 'Chakra Petch', sans-serif;
+    color: #f9dbbd;
+    animation: 3s anim-lineUp;
 }
 body{
 
@@ -152,6 +167,17 @@ body{
         padding:13px 10px;
         font-family: 'Chakra Petch', sans-serif;
         font-weight: bold;
+      }
+      #pdf {
+        display:none;
+    border:2px solid #f9dbbd;
+    background-color: #f9dbbd;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:10px 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    margin-left:100px;
       }
 
       @keyframes fadeInRight {
