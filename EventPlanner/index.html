@@ -6,9 +6,40 @@
     <title>Lay-Z-Planner</title>
     <script  src = "pixi/pixi.js"></script>
     <script  src = "pixi/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </head>
 <body>
-    <image src = "pixi/images/floorPlan.png"></image>
+        <h1 id="header"> Lay-Z-Planner </h1>
+    <div id="imagewcaption">
+    <image id="front_page" src = "pixi/images/floorPlan.png"></image>
+    <h3 id="caption">
+        The Lay-Z-Planner serves as a streamlined, easy to use event planner for 2D rectangularly aligned
+        spaces. See the power that simple geometry can accomplish!
+    </h3>
+    </div>
+
+    <div id = "input-container" class="fadeIn">
+    <input id="input1" type="text" class="input" placeholder = "Input Length in meters"> </input>
+    <input id="input2" type="text" class="input" placeholder = "Input Width in meters"></input>
+    <button id = "value-btn" onclick = "fadeOut(); showBtns()">click to make plane</button>
+</div>
+<div id="btn-spn">
+    <button id="start_button" class="lineUp" onclick="remove(this); showTextBoxes();"> Start Planning!</button>
+    <button id="table-spn">place table</button>
+    <button id="long-tablespn">place long table</button>
+    <button id="circle-tablespn">place circle table</button>
+    <button id="chair-spn">place chair</button>
+</div>
 </body>
 
 

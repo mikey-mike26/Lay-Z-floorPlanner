@@ -1,0 +1,225 @@
+
+#header{
+    color: #f9dbbd;
+    margin-top:20px;
+    text-align: center;
+    font-family: 'Inter','BlinkMacSystemFont';
+    margin-bottom: 25px;
+    font-size:50px;
+    animation: 3s anim-lineUp;
+    
+}
+#imagewcaption{
+
+    display:flex;
+    justify-content: space-between;
+}
+#front_page{
+    margin-top:25px;
+animation: fadeInLeft 2s;
+width:600px;
+height:400px;
+}
+
+#caption {
+    font-family: 'Chakra Petch', sans-serif;
+    margin-top:75px;
+    font-stretch: condensed;
+    font-size: 32px;
+    text-align: center;
+    margin-left:30px;
+    color: #f9dbbd;
+    animation: fadeInRight 2s;
+    
+
+}
+
+#input-container {
+    display: none;
+    margin-left: 650px;
+    
+}
+
+.input{
+    background-color:#252323;
+    color:white;
+    border:2px #f9dbbd solid;
+    border-radius: 7px;
+    padding:13px 5px;
+    animation: 1s anim-lineUp;
+    
+}
+::-webkit-input-placeholder{
+    color:#f9dbbd;
+}
+
+
+#value-btn {
+    border:2px solid #f9dbbd;
+    background-color: #f9dbbd;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:10px 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    animation: 2s anim-lineUp;
+}
+
+
+#table-spn {
+    display:none;
+    border:2px solid #f9dbbd;
+    background-color: #f9dbbd;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:10px 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+}
+#long-tablespn {
+    display:none;
+    border:2px solid #f9dbbd;
+    background-color: #f9dbbd;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:10px 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+}
+#circle-tablespn {
+    display:none;
+    border:2px solid #f9dbbd;
+    background-color: #f9dbbd;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:10px 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+}
+#chair-spn {
+    display:none;
+    border:2px solid #f9dbbd;
+    background-color: #f9dbbd;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:10px 5px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+}
+
+#btn-spn {
+    display:flex;
+    gap:5px;
+    margin-bottom:15px;
+}
+body{
+
+    background: #252323;
+}
+
+    .lineUp {
+        animation: 2s anim-lineUp ease-out ;
+      }
+      @keyframes anim-lineUp {
+        0% {
+          opacity: 0;
+          transform: translateY(80%);
+        }
+        20% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      #start_button{
+        margin-left:825px;
+        border:2px solid #f9dbbd;
+        background-color: #f9dbbd;
+        font-size: 20px;
+        border-radius: 7px;
+        padding:13px 10px;
+        font-family: 'Chakra Petch', sans-serif;
+        font-weight: bold;
+      }
+
+      @keyframes fadeInRight {
+        0% {
+           opacity: 0;
+           transform: translateX(200px);
+        }
+        100% {
+           opacity: 1;
+           transform: translateX(0);
+        }
+     } 
+
+     @keyframes fadeInLeft {
+        0% {
+           opacity: 0;
+           transform: translateX(-200px);
+        }
+        100% {
+           opacity: 1;
+           transform: translateX(0);
+        }
+     } 
+
+     .lineDown{
+        animation: 2s anim-lineDown ease-out ;
+      }
+      @keyframes anim-lineDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-80%);
+        }
+        20% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+
+      .fadeOut {
+        display: none;
+
+      }
+
+
+      @keyframes anim-lineLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(-80%);
+        }
+        20% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+      html{
+        overflow:hidden;
+      }
